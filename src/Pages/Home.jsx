@@ -50,12 +50,14 @@ const Home = () => {
                             <div className="card-body">
                                 <div className="flex justify-between items-center">
                                     <h2 className="card-title">{i?.title}</h2>
-                                    <h2 className="text-sm font-bold">{i?.date.slice(0,10)}</h2>
+                                    <h2 className="text-sm font-bold">{i?.date.slice(0, 10)}</h2>
                                 </div>
                                 <hr className="border border-black" />
                                 <p className="text-sm">{i?.content}</p>
                                 <div className="card-actions mt-5">
-                                    <button className="btn btn-outline text-green-600">Update</button>
+                                    <Link to={`/updateNote/${i._id}`}>
+                                        <button className="btn btn-outline text-green-600">Update</button>
+                                    </Link>
                                     <button onClick={() => handleDeleteNote(i._id)} className="btn btn-outline text-red-500">delete</button>
                                 </div>
                             </div>

@@ -34,6 +34,21 @@ const Trash = () => {
 
     }
 
+    const handleReverseNote = id => {
+
+        axiosPublic.patch(`/trash/${id}`, { trash: false })
+            .then(res => {
+                if (res.data.modifiedCount) {
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Successful Note Reverse",
+                        icon: "success"
+                    })
+                    reFetch()
+                }
+            })
+    }
+
 
     return (
         <div className="p-5">
@@ -46,10 +61,11 @@ const Trash = () => {
                     {
                         trash?.map(i => <div key={i._id} className="card  bg-base-100 shadow-xl">
                             <div className="card-body">
-                                <h2 className="card-title">Shoes!</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <h2 className="card-title">{i?.title}</h2>
+                                <p>{i?.content}</p>
                                 <div className="card-actions mt-2 w-full">
-                                    <button onClick={()=>handleDeleteNote(i._id)} className="btn btn-outline text-red-500 w-full">Delete</button>
+                                    <button onClick={() => handleReverseNote(i._id)} className="btn btn-outline text-green-500">Reverse</button>
+                                    <button onClick={() => handleDeleteNote(i._id)} className="btn btn-outline text-red-500">Delete</button>
                                 </div>
                             </div>
                         </div>)

@@ -3,6 +3,7 @@ import Home from '../Pages/Home';
 import Root from '../Layout/Root';
 import CreateNote from '../Pages/CreateNote';
 import Trash from '../Pages/Trash';
+import UpdateNote from '../Pages/UpdateNote';
 
 const Router = createBrowserRouter([
     {
@@ -15,11 +16,15 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/createNote',
-                element:<CreateNote></CreateNote>
+                element: <CreateNote></CreateNote>
             },
             {
                 path: '/trash',
-                element:<Trash></Trash>
+                element: <Trash></Trash>
+            },
+            {
+                path:'/updateNote/:id',
+                element:<UpdateNote></UpdateNote>,
             }
         ]
     }
