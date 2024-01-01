@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '../Pages/Home';
 import Root from '../Layout/Root';
+import CreateNote from '../Pages/CreateNote';
 
 const Router = createBrowserRouter([
     {
@@ -11,10 +12,10 @@ const Router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>
             },
-            // {
-            //     path: '/',
-            //     element:
-            // }
+            {
+                path: '/createNote',
+                element:<CreateNote></CreateNote>
+            }
         ]
     }
 ])
