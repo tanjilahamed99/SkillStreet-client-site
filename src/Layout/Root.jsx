@@ -24,7 +24,7 @@ const Root = () => {
                         Create New Note
                     </NavLink>
                     <NavLink
-                        to="/"
+                        to="/trash"
                         className={({ isActive, isPending }) =>
                             isPending ? "pending" : isActive ? "text-white font-bold" : ""
                         }
