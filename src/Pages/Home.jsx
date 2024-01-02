@@ -48,9 +48,9 @@ const Home = () => {
                     {
                         note?.map(i => <div className="card bg-base-100 shadow-xl" key={i._id}>
                             <div className="card-body">
-                                <div className="flex justify-between items-center">
-                                    <h2 className="card-title">{i?.title}</h2>
-                                    <h2 className="text-sm font-bold">{i?.date.slice(0, 10)}</h2>
+                                <div className="flex flex-col lg:flex-row md:justify-between justify-start gap-2 lg:items-center">
+                                    <h2 className="card-title lg:w-[70%]">{i?.title}</h2>
+                                    <h2 className="text-sm font-bold  lg:text-right lg:w-[30%]">{i?.date.slice(0, 10)}</h2>
                                 </div>
                                 <hr className="border border-black" />
                                 <p className="text-sm">{i?.content}</p>

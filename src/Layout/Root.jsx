@@ -2,8 +2,8 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Root = () => {
     return (
-        <div className="container mx-auto flex gap-10 h-[100vh]">
-            <div className="bg-blue-500 w-[25%] p-5">
+        <div className="container mx-auto flex flex-col md:flex-row gap-10 h-full">
+            <div className="bg-blue-500 md:w-[25%] w-full p-5 ">
                 <h2 className="text-2xl text-center font-bold text-white " >Note</h2>
                 <h2 className="text-sm mt-1 text-center font-bold text-white " >Note Anything</h2>
                 <ul className="text-center   flex flex-col gap-3 mt-5">
@@ -33,7 +33,7 @@ const Root = () => {
                     </NavLink>
                 </ul>
             </div>
-            <div className="w-[75%]">
+            <div className="md:w-[75%] w-full">
                 <Outlet></Outlet>
             </div>
         </div>
